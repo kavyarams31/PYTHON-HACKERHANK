@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Define vowels and consonants
+vowels = r"[AEIOUaeiou]"
+consonants = r"[QWRTYPSDFGHJKLZXCVBNMqwrtypsdfghjklzxcvbnm]"
+
+# Read input string from STDIN
+s = input()
+
+# Use re.findall() with lookarounds to find the desired matches
+# Pattern explanation:
+# (?<=[...]) : Positive lookbehind, asserts the character immediately before is a consonant
+# ([...]{2,}) : Capturing group for two or more vowels (this is what findall returns)
+# (?=[...]) : Positive lookahead, asserts the character immediately after is a consonant
+pattern = f"(?<={consonants})({vowels}{{2,}})(?={consonants})"
+
+matches = re.findall(pattern, s)
+
+# Print the matches, or -1 if none are found
+if matches:
+    for match in matches:
+        print(match)
+else:
+    print("-1")
+
