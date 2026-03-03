@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    # Read the first set
+    input() # Skip the size 'm'
+    set_a = set(map(int, input().split()))
+
+    # Read the second set
+    input() # Skip the size 'n'
+    set_b = set(map(int, input().split()))
+
+    # Calculate symmetric difference (elements in A or B, but not both)
+    # Option 1: Using the method
+    # sym_diff = set_a.symmetric_difference(set_b)
+    # Option 2: Using the ^ operator (shorter)
+    sym_diff = set_a ^ set_b
+
+    # Sort the resulting elements
+    result = sorted(list(sym_diff))
+
+    # Print each element on a new line
+    for item in result:
+        print(item)
