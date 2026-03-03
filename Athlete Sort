@@ -1,0 +1,26 @@
+import sys
+from operator import itemgetter
+
+if __name__ == '__main__':
+    # Read N and M (number of rows and columns)
+    nm = input().split()
+    n = int(nm[0])
+    m = int(nm[1])
+
+    arr = []
+    # Read the data into a list of lists of integers
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    # Read the sorting key index K
+    k = int(input())
+
+    # Sort the array using the K-th element as the key
+    arr_sorted = sorted(arr, key=itemgetter(k))
+    # Alternatively, using a lambda function:
+    # arr_sorted = sorted(arr, key=lambda row: row[k])
+
+    # Print the sorted table
+    for row in arr_sorted:
+        # Unpack the list elements and print them space-separated
+        print(*row)
