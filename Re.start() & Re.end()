@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+S = input()
+k = input()
+
+# Use a capturing group inside a lookahead
+pattern = re.compile(fr'(?={k})')
+matches = list(pattern.finditer(S))
+
+if not matches:
+    print((-1, -1))
+else:
+    for match in matches:
+        # match.start() gives the index of the zero-width match
+        # match.start() + len(k) - 1 gives the end index (inclusive as per problem output format)
+        print(f"({match.start()}, {match.start() + len(k) - 1})")
