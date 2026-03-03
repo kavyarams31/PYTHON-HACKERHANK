@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+import sys
+
+# Read input from STDIN
+for line in sys.stdin.read().splitlines()[1:]:
+    try:
+        re.compile(line)
+        print("True")
+    except re.error:
+        print("False")
