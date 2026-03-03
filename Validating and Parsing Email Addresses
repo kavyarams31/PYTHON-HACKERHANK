@@ -1,0 +1,23 @@
+import re
+import email.utils
+
+def solve():
+    # Define the specific regex pattern required by the problem rules
+    # Username: Starts with letter, followed by alphanumeric, -, ., or _
+    # Domain: Only letters
+    # Extension: Only letters, 1 to 3 characters long
+    pattern = re.compile(r'^[a-zA-Z][\w\-\.]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$')
+    
+    n = int(input())
+    for _ in range(n):
+        line = input()
+        # Use email.utils.parseaddr to handle the "name <email>" format
+        parsed_name, parsed_email = email.utils.parseaddr(line)
+        
+        # Check if the extracted email matches the regex pattern
+        if re.match(pattern, parsed_email):
+            # If valid, print the original input line as required by the problem
+            print(line)
+
+if __name__ == '__main__':
+    solve()
