@@ -1,0 +1,4 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+m=complex(input())
+print(abs(complex(m.real,m.imag)),'\n',cmath.phase(complex(m.real,m.imag)))
