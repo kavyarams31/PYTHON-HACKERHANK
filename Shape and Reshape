@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+
+my_array = numpy.array(input().split(), int)
+print(numpy.reshape(my_array,(3,3)))
