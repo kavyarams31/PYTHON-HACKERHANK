@@ -1,0 +1,40 @@
+import os
+from datetime import datetime
+
+def time_delta(t1, t2):
+    """
+    Calculates the absolute difference in seconds between two timestamps.
+
+    Args:
+        t1 (str): The first timestamp string in the format "Day dd Mon yyyy hh:mm:ss +xxxx".
+        t2 (str): The second timestamp string in the format "Day dd Mon yyyy hh:mm:ss +xxxx".
+
+    Returns:
+        str: The absolute difference in seconds as a string.
+    """
+    # The format string matches the input format: 
+    # %a (abbreviated weekday), %d (day), %b (abbreviated month), %Y (year), 
+    # %H (hour), %M (minute), %S (second), %z (time zone offset)
+    fmt = "%a %d %b %Y %H:%M:%S %z"
+    
+    # Convert the string timestamps to datetime objects
+    dt1 = datetime.strptime(t1, fmt)
+    dt2 = datetime.strptime(t2, fmt)
+    
+    # Calculate the time difference (timedelta object)
+    delta = abs(dt1 - dt2)
+    
+    # Get the total difference in seconds and convert to an integer
+    delta_seconds = int(delta.total_seconds())
+    
+    return str(delta_seconds)
+
+if __name__ == '__main__':
+    # This part handles the HackerRank input/output format for multiple test cases
+    # For local testing, you might use a different input method
+    t = int(input())
+    for _ in range(t):
+        t1 = input()
+        t2 = input()
+        delta = time_delta(t1, t2)
+        print(delta)
