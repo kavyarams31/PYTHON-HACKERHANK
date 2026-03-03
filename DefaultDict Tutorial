@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+
+# Read n and m from the first line of input
+n, m = map(int, input().split())
+
+# Create a defaultdict where each new key gets an empty list as a default value
+d = defaultdict(list)
+
+# Read the 'n' words of group A and store their 1-based indices
+for i in range(1, n + 1):
+    d[input()].append(i)
+
+# Read the 'm' words of group B and print their indices from group A
+for _ in range(m):
+    word_B = input()
+    if word_B in d:
+        # Use the unpack operator (*) to print list elements separated by spaces
+        print(*d[word_B])
+    else:
+        # If the word is not in group A, print -1
+        print("-1")
