@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the size (not strictly needed for the logic but part of input)
+input()
+# Read the space-separated numbers as strings
+str_numbers = input().split()
+
+# Check if all are positive AND if any are palindromes
+# str(p) == str(p)[::-1] checks if a number string is a palindrome
+print(all(int(n) > 0 for n in str_numbers) and any(p == p[::-1] for p in str_numbers))
