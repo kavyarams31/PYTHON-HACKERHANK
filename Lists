@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    N = int(input())
+    lst = []
+    for _ in range(N):
+        func, *args = input().split()
+        if func != 'print':
+            getattr(lst, func)(*map(int, args))
+        else:
+            print(lst)
