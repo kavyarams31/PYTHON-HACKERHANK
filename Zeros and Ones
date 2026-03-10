@@ -1,0 +1,10 @@
+import numpy as np
+
+# Read input as space-separated integers and convert to a tuple
+shape = tuple(map(int, input().split()))
+
+# Print array of zeros with integer type
+print(np.zeros(shape, dtype=int))
+
+# Print array of ones with integer type
+print(np.ones(shape, dtype=int))
