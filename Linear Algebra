@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+
+# Set precision to match expected output
+np.set_printoptions(legacy='1.13')
+
+# Read N
+n = int(input())
+
+# Create matrix
+array = np.array([input().split() for _ in range(n)], float)
+
+# Calculate and print determinant
+print(np.linalg.det(array))
+
