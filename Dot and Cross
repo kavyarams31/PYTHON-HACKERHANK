@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Read the dimension N
+n = int(input())
+
+# Read array A and convert to a numpy array of integers
+a = numpy.array([input().split() for _ in range(n)], int)
+
+# Read array B and convert to a numpy array of integers
+b = numpy.array([input().split() for _ in range(n)], int)
+
+# Compute the matrix multiplication (dot product for 2D arrays) and print the result
+print(numpy.dot(a, b))
