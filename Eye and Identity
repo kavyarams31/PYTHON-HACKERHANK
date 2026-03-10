@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+# Set print options to match the required format (legacy 1.13)
+numpy.set_printoptions(legacy='1.13')
+
+# Read input N and M
+n, m = map(int, input().split())
+
+# Generate and print the eye matrix
+print(numpy.eye(n, m))
