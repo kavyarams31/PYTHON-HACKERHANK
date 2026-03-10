@@ -1,0 +1,28 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def solve():
+    # Define the regex pattern for a valid floating point number
+    # r'^' - Start of the string
+    # '[-+]?' - Optional leading '+' or '-' sign
+    # '[0-9]*' - Zero or more digits before the decimal
+    # '\.' - Matches a literal dot (the backslash escapes the special meaning of '.')
+    # '[0-9]+' - One or more digits after the decimal
+    # '$' - End of the string
+    pattern = re.compile(r'^[-+]?[0-9]*\.[0-9]+$')
+    
+    # Read the number of test cases
+    try:
+        queries = int(input())
+    except ValueError:
+        return
+
+    # Iterate through each test case
+    for _ in range(queries):
+        number_string = input()
+        # Use the pattern to match the input string
+        # bool() converts the match object (or None) to True or False
+        print(bool(pattern.match(number_string)))
+
+if __name__ == '__main__':
+    solve()
