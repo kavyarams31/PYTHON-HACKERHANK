@@ -1,0 +1,14 @@
+
+
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    # your code goes here
+    level += 1
+    # Update maxdepth if the current level is deeper than the recorded maximum
+    if level > maxdepth:
+        maxdepth = level
+    # Recursively call the depth function for each child element
+    for child in elem:
+        depth(child, level)
+
