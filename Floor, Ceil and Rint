@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Set print options to handle potential formatting differences in older NumPy versions on HackerRank
+numpy.set_printoptions(sign=' ')
+
+# Read input from a single line, split by spaces, and convert to a list of floats
+a = numpy.array(input().split(), float)
+
+# Print the floor, ceil, and rint of the array elements, each on a new line
+print(numpy.floor(a))
+print(numpy.ceil(a))
+print(numpy.rint(a))
